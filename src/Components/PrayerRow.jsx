@@ -1,0 +1,154 @@
+import PrayerTimes from "./PrayerTimes";
+const PrayerRow = ({data,monthName}) => {
+  // const [data, setData] = useState([]);
+  // const [monthName, setMonthName] = useState("");
+
+  // const today = new Date();
+  // const todayDate = String(today.getDate()).padStart(2, "0");
+
+  // useEffect(() => {
+  //   const currentMonthIndex = new Date().getMonth(); // 0 for Jan, 7 for Aug
+  //   const monthNames = [
+  //     "January",
+  //     "February",
+  //     "March",
+  //     "April",
+  //     "May",
+  //     "June",
+  //     "July",
+  //     "August",
+  //     "September",
+  //     "October",
+  //     "November",
+  //     "December",
+  //   ];
+
+  //   const fileName = monthNames[currentMonthIndex];
+  //   setMonthName(fileName); // Optional: to display which month is loaded
+  //   const loadData = async () => {
+  //     try {
+  //       const json = await import(`../JSON/${fileName}.json`);
+  //       setData(json.default);
+  //     } catch (error) {
+  //       console.error(`Failed to load JSON for ${fileName}:`, error);
+  //     }
+  //   };
+
+  //   loadData();
+  // }, []);
+
+
+
+   const today = new Date();
+  const todayDate = String(today.getDate()).padStart(2, "0");
+
+  return (
+    <>
+      <section>
+        {/* JSX PRAYER TIME */}
+        {/* <PrayerTimes currentMonth={monthName} Data={data}/> */}
+
+        <h2 className="text-center text-lg font-semibold mb-4">
+          Prayer Times for {monthName}
+        </h2>
+        <table className="w-full table-auto border-collapse text-center">
+          <thead>
+            <tr className="bg-blue-100 text-gray-800">
+              <th className="px-4 py-2">Date</th>
+              <th className="px-4 py-2">Day</th>
+              <th className="px-4 py-2">Fajr</th>
+              <th className="px-4 py-2">Sunrise</th>
+              <th className="px-4 py-2">Dhuhr</th>
+              <th className="px-4 py-2">Asr</th>
+              <th className="px-4 py-2">Maghrib</th>
+              <th className="px-4 py-2">Isha</th>
+            </tr>
+          </thead>
+          <tbody>
+          {data.map((prayer, index) => (
+            <tr
+              key={index}
+              className={`text-sm text-gray-700 border-b hover:bg-blue-50 ${
+                prayer.date === "10" || prayer.date === "20"
+                  ? "border-t-4 border-blue-300"
+                  : prayer.day === "Fri"
+                  ? "bg-red-200"
+                  : ""
+              }   ${prayer.date === todayDate ? "bg-emerald-300 font-bold" : ""} `}
+            >
+              <td className="px-4 py-2 font-medium">{prayer.date}</td>
+              <td className="px-4 py-2">{prayer.day}</td>
+              <td className="px-4 py-2">{prayer.fajr}</td>
+              <td className="px-4 py-2">{prayer.sunrise}</td>
+              <td className="px-4 py-2">{prayer.dhuhr}</td>
+              <td className="px-4 py-2">{prayer.asr}</td>
+              <td className="px-4 py-2">{prayer.maghrib}</td>
+              <td className="px-4 py-2">{prayer.isha}</td>
+            </tr>
+          ))}
+        </tbody>
+          {/* <tbody>
+            {data.map((prayer, index) => {
+              const isToday = prayer.date === todayDate;
+
+              let nextPrayerKey = null;
+
+              if (isToday) {
+                const now = new Date();
+                const getTimeAsDate = (timeStr) => {
+                  const [hours, minutes] = timeStr.split(":").map(Number);
+                  const date = new Date();
+                  date.setHours(hours, minutes, 0, 0);
+                  return date;
+                };
+
+                const schedule = [
+                  { key: "fajr", time: getTimeAsDate(prayer.fajr) },
+                  { key: "sunrise", time: getTimeAsDate(prayer.sunrise) },
+                  { key: "dhuhr", time: getTimeAsDate(prayer.dhuhr) },
+                  { key: "asr", time: getTimeAsDate(prayer.asr) },
+                  { key: "maghrib", time: getTimeAsDate(prayer.maghrib) },
+                  { key: "isha", time: getTimeAsDate(prayer.isha) },
+                ];
+
+                nextPrayerKey =
+                  schedule.find((slot) => now < slot.time)?.key || null;
+              }
+
+              const getClass = (key) => {
+                if (!isToday || key !== nextPrayerKey) return "px-4 py-2";
+                return key === "sunrise"
+                  ? "px-4 py-2 font-bold text-red-600"
+                  : "px-4 py-2 font-semibold text- xl text-red-700";
+              };
+
+              return (
+                <tr
+                  key={index}
+                  className={`text-sm text-gray-700 border-b hover:bg-blue-50 ${
+                    prayer.date === "10" || prayer.date === "20"
+                      ? "border-t-4 border-blue-300"
+                      : prayer.day === "Fri"
+                      ? "bg-red-200"
+                      : ""
+                  } ${isToday ? "bg-emerald-300" : ""}`}
+                >
+                  <td className="px-4 py-2 font-medium">{prayer.date}</td>
+                  <td className="px-4 py-2">{prayer.day}</td>
+                  <td className={getClass("fajr")}>{prayer.fajr}</td>
+                  <td className={getClass("sunrise")}>{prayer.sunrise}</td>
+                  <td className={getClass("dhuhr")}>{prayer.dhuhr}</td>
+                  <td className={getClass("asr")}>{prayer.asr}</td>
+                  <td className={getClass("maghrib")}>{prayer.maghrib}</td>
+                  <td className={getClass("isha")}>{prayer.isha}</td>
+                </tr>
+              );
+            })}
+          </tbody> */}
+        </table>
+      </section>
+    </>
+  );
+};
+
+export default PrayerRow;
