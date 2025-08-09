@@ -1,44 +1,5 @@
 import PrayerTimes from "./PrayerTimes";
 const PrayerRow = ({data,monthName}) => {
-  // const [data, setData] = useState([]);
-  // const [monthName, setMonthName] = useState("");
-
-  // const today = new Date();
-  // const todayDate = String(today.getDate()).padStart(2, "0");
-
-  // useEffect(() => {
-  //   const currentMonthIndex = new Date().getMonth(); // 0 for Jan, 7 for Aug
-  //   const monthNames = [
-  //     "January",
-  //     "February",
-  //     "March",
-  //     "April",
-  //     "May",
-  //     "June",
-  //     "July",
-  //     "August",
-  //     "September",
-  //     "October",
-  //     "November",
-  //     "December",
-  //   ];
-
-  //   const fileName = monthNames[currentMonthIndex];
-  //   setMonthName(fileName); // Optional: to display which month is loaded
-  //   const loadData = async () => {
-  //     try {
-  //       const json = await import(`../JSON/${fileName}.json`);
-  //       setData(json.default);
-  //     } catch (error) {
-  //       console.error(`Failed to load JSON for ${fileName}:`, error);
-  //     }
-  //   };
-
-  //   loadData();
-  // }, []);
-
-
-
    const today = new Date();
   const todayDate = String(today.getDate()).padStart(2, "0");
 
