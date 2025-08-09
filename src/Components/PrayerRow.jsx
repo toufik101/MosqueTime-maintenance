@@ -87,64 +87,6 @@ const PrayerRow = ({data,monthName}) => {
             </tr>
           ))}
         </tbody>
-          {/* <tbody>
-            {data.map((prayer, index) => {
-              const isToday = prayer.date === todayDate;
-
-              let nextPrayerKey = null;
-
-              if (isToday) {
-                const now = new Date();
-                const getTimeAsDate = (timeStr) => {
-                  const [hours, minutes] = timeStr.split(":").map(Number);
-                  const date = new Date();
-                  date.setHours(hours, minutes, 0, 0);
-                  return date;
-                };
-
-                const schedule = [
-                  { key: "fajr", time: getTimeAsDate(prayer.fajr) },
-                  { key: "sunrise", time: getTimeAsDate(prayer.sunrise) },
-                  { key: "dhuhr", time: getTimeAsDate(prayer.dhuhr) },
-                  { key: "asr", time: getTimeAsDate(prayer.asr) },
-                  { key: "maghrib", time: getTimeAsDate(prayer.maghrib) },
-                  { key: "isha", time: getTimeAsDate(prayer.isha) },
-                ];
-
-                nextPrayerKey =
-                  schedule.find((slot) => now < slot.time)?.key || null;
-              }
-
-              const getClass = (key) => {
-                if (!isToday || key !== nextPrayerKey) return "px-4 py-2";
-                return key === "sunrise"
-                  ? "px-4 py-2 font-bold text-red-600"
-                  : "px-4 py-2 font-semibold text- xl text-red-700";
-              };
-
-              return (
-                <tr
-                  key={index}
-                  className={`text-sm text-gray-700 border-b hover:bg-blue-50 ${
-                    prayer.date === "10" || prayer.date === "20"
-                      ? "border-t-4 border-blue-300"
-                      : prayer.day === "Fri"
-                      ? "bg-red-200"
-                      : ""
-                  } ${isToday ? "bg-emerald-300" : ""}`}
-                >
-                  <td className="px-4 py-2 font-medium">{prayer.date}</td>
-                  <td className="px-4 py-2">{prayer.day}</td>
-                  <td className={getClass("fajr")}>{prayer.fajr}</td>
-                  <td className={getClass("sunrise")}>{prayer.sunrise}</td>
-                  <td className={getClass("dhuhr")}>{prayer.dhuhr}</td>
-                  <td className={getClass("asr")}>{prayer.asr}</td>
-                  <td className={getClass("maghrib")}>{prayer.maghrib}</td>
-                  <td className={getClass("isha")}>{prayer.isha}</td>
-                </tr>
-              );
-            })}
-          </tbody> */}
         </table>
       </section>
     </>
