@@ -1,56 +1,49 @@
-import PrayerTimes from "./PrayerTimes";
-const PrayerRow = ({data,monthName}) => {
-   const today = new Date();
+import React from "react";
+
+const PrayerRow = ({ data, monthName }) => {
+  const today = new Date();
   const todayDate = String(today.getDate()).padStart(2, "0");
 
   return (
-    <>
-      <section>
-        {/* JSX PRAYER TIME */}
-        {/* <PrayerTimes currentMonth={monthName} Data={data}/> */}
-
-        <h2 className="text-center text-lg font-semibold mb-4">
-          Prayer Times for {monthName}
-        </h2>
-        <table className="w-full table-auto border-collapse text-center">
-          <thead>
-            <tr className="bg-blue-100 text-gray-800">
-              <th className="px-4 py-2">Date</th>
-              <th className="px-4 py-2">Day</th>
-              <th className="px-4 py-2">Fajr</th>
-              <th className="px-4 py-2">Sunrise</th>
-              <th className="px-4 py-2">Dhuhr</th>
-              <th className="px-4 py-2">Asr</th>
-              <th className="px-4 py-2">Maghrib</th>
-              <th className="px-4 py-2">Isha</th>
-            </tr>
-          </thead>
-          <tbody>
+    <section>
+      <h2 className="text-center text-lg font-bold mb-4">
+        Prayer Times for {monthName}
+      </h2>
+      <table className="w-full table-auto border-collapse text-center">
+        <thead>
+          <tr className="bg-blue-100 text-gray-800">
+            <th>Date</th>
+            <th>Day</th>
+            <th>Fajr</th>
+            <th>Sunrise</th>
+            <th>Dhuhr</th>
+            <th>Asr</th>
+            <th>Maghrib</th>
+            <th>Isha</th>
+          </tr>
+        </thead>
+        <tbody>
           {data.map((prayer, index) => (
             <tr
               key={index}
-              className={`text-sm text-gray-700 border-b hover:bg-blue-50 ${
-                prayer.date === "10" || prayer.date === "20"
-                  ? "border-t-4 border-blue-300"
-                  : prayer.day === "Fri"
-                  ? "bg-red-200"
-                  : ""
-              }   ${prayer.date === todayDate ? "bg-emerald-300 font-bold" : ""} `}
+              className={`text-sm border-b  hover:bg-blue-50 
+                ${prayer.date === "10" || prayer.date === "21" ? "border-t-7 border-black-300" : ""}
+                ${prayer.day === "Fri" ? "bg-red-200" : ""}
+                ${prayer.date === todayDate ? "bg-emerald-300 font-bold" : ""}`}
             >
-              <td className="px-4 py-2 font-medium">{prayer.date}</td>
-              <td className="px-4 py-2">{prayer.day}</td>
-              <td className="px-4 py-2">{prayer.fajr}</td>
-              <td className="px-4 py-2">{prayer.sunrise}</td>
-              <td className="px-4 py-2">{prayer.dhuhr}</td>
-              <td className="px-4 py-2">{prayer.asr}</td>
-              <td className="px-4 py-2">{prayer.maghrib}</td>
-              <td className="px-4 py-2">{prayer.isha}</td>
+              <td className="py-1">{prayer.date}</td>
+              <td >{prayer.day}</td>
+              <td>{prayer.adhan.fajr}</td>
+              <td>{prayer.adhan.sunrise}</td>
+              <td>{prayer.adhan.dhuhr}</td>
+              <td>{prayer.adhan.asr}</td>
+              <td>{prayer.adhan.maghrib}</td>
+              <td>{prayer.adhan.isha}</td>
             </tr>
           ))}
         </tbody>
-        </table>
-      </section>
-    </>
+      </table>
+    </section>
   );
 };
 
