@@ -1,32 +1,50 @@
 import React from "react";
+import { useEffect, useState } from "react";
+const Leftbox = ({ currentMonth, mosqueName }) => {
+  let [jummahData, setJummahData] = useState([]);
 
-const Leftbox = ({ currentMonth }) => {
+  useEffect(() => {
+    const loadData = async () => {
+      if (!currentMonth || !mosqueName) return;
+
+      try {
+        const jummahTime = await import(`../JSON/${mosqueName}/Jummah.json`);
+        setJummahData(jummahTime.default || []);
+      } catch (error) {
+        console.log("Jummah Time Loading :", error);
+      }
+    };
+    loadData();
+  }, [currentMonth, mosqueName]);
+
   return (
     <div className="sticky top-0">
       {/* SECTION-01 */}
-<section className="bg-gradient-to-br from-white to-yellow-50 p-6 rounded-2xl shadow-xl max-w-md mx-auto border border-yellow-200">
-  <h2 className="text-3xl text-center font-extrabold text-yellow-700 mb-4 tracking-wide">
-    🕌 JUMMAH
-  </h2>
+      <section className="bg-gradient-to-br from-white to-yellow-50 p-6 rounded-2xl shadow-xl max-w-md mx-auto border border-yellow-200">
+        <h2 className="text-3xl text-center font-extrabold text-yellow-700 mb-4 tracking-wide">
+          🕌 JUMMAH
+        </h2>
 
-  <ul className="mx-auto list-none divide-y divide-yellow-300 rounded-xl overflow-hidden shadow-md">
-    <li className="bg-yellow-200 text-lg font-semibold flex justify-between items-center px-4 py-3 hover:bg-yellow-300 transition duration-200 ease-in-out">
-      <strong className="text-yellow-800">1st</strong>
-      <span className="text-yellow-900">12:30 - 1:00</span>
-    </li>
-
-    <li className="bg-green-200 text-lg font-semibold flex justify-between items-center px-4 py-3 hover:bg-green-300 transition duration-200 ease-in-out">
-      <strong className="text-green-800">2nd</strong>
-      <span className="text-green-900">1:30 - 2:00</span>
-    </li>
-
-    <li className="bg-yellow-300 text-lg font-semibold flex justify-between items-center px-4 py-3 hover:bg-yellow-400 transition duration-200 ease-in-out">
-      <strong className="text-yellow-900">3rd</strong>
-      <span className="text-yellow-900">2:30 - 3:00</span>
-    </li>
-  </ul>
-</section>
-
+        <ul className="mx-auto list-none divide-y divide-yellow-300 rounded-xl overflow-hidden shadow-md">
+          {jummahData.map((value, index) => (
+            <li
+              className={`${
+                value.title === "1st"
+                  ? "bg-yellow-200"
+                  : value.title === "2nd"
+                  ? "bg-green-200"
+                  : value.title === "3rd"
+                  ? "bg-yellow-300"
+                  : "bg-red-400"
+              } text-lg font-semibold flex justify-between items-center px-4 py-3 hover:bg-yellow-300 transition duration-200 ease-in-out`}
+              key={index.toLocaleString()}
+            >
+              <strong className="text-black">{value.title}</strong>
+              <span className="text-black">{value.time}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       {/* SECTION-02 */}
       <section className="mt-4 space-y-3">

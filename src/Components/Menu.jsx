@@ -8,6 +8,7 @@ const Menu = () => {
     { name: "Mosque Fath", path: "/" },
     { name: "Mosque B", path: "/mosqueB" },
     { name: "Mosque C", path: "/mosqueC" },
+    { name: "MASJID AL-FALAH", path: "/alfalah" },
   ];
   return (
     <div className="relative  text-left">
