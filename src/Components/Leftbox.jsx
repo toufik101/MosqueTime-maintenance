@@ -29,11 +29,11 @@ const Leftbox = ({ currentMonth, mosqueName }) => {
           {jummahData.map((value, index) => (
             <li
               className={`${
-                value.title === "1st"
+                value.title.slice(0,3) === "1st"
                   ? "bg-yellow-200"
-                  : value.title === "2nd"
+                  : value.title.slice(0,3) === "2nd"
                   ? "bg-green-200"
-                  : value.title === "3rd"
+                  : value.title.slice(0,3) === "3rd"
                   ? "bg-yellow-300"
                   : "bg-red-400"
               } text-lg font-semibold flex justify-between items-center px-4 py-3 hover:bg-yellow-300 transition duration-200 ease-in-out`}

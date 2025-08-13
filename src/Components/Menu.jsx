@@ -5,10 +5,16 @@ const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "Mosque Fath", path: "/" },
-    { name: "Mosque B", path: "/mosqueB" },
-    { name: "Mosque C", path: "/mosqueC" },
+    { name: "Baitul Mukarram", path: "/" },
     { name: "MASJID AL-FALAH", path: "/alfalah" },
+    { name: "Mosque Fath", path: "/mosquefath" },
+    { name: "IONA MASJID", path: "/IONAMASJID" },
+    { name: "MASJIDUN-NUR", path: "/masjidunnur" },
+    { name: "DARUL QURAN MASJID", path: "/darulquranmasjid" },
+    {
+      name: "Center for Dawah and Research Masjid (CDR) ",
+      path: "/CenterForDawah",
+    },
   ];
   return (
     <div className="relative  text-left">
@@ -62,11 +68,6 @@ const Menu = () => {
 };
 
 export default Menu;
-
-
-
-
-
 
 // import React, { useState } from "react";
 // import { NavLink } from "react-router-dom";

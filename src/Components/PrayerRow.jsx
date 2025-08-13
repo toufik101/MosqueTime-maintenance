@@ -14,7 +14,7 @@ const PrayerRow = ({ data, monthName }) => {
         <thead>
           <tr className="bg-blue-100 text-gray-800">
             <th>Date</th>
-            <th>Islamic Date</th>
+            <th className="max-md:w-20 text-wrap">Islamic Date</th>
             <th>Day</th>
             <th>Fajr</th>
             <th>Sunrise</th>

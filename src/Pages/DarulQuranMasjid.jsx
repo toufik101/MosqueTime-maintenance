@@ -3,10 +3,10 @@ import Leftbox from "../Components/Leftbox";
 import PrayerTimes from "../Components/PrayerTimes";
 import PrayerRow from "../Components/PrayerRow";
 import Menu from "../Components/Menu";
-const AlFalah = () => {
+const DarulQuranMasjid = () => {
   const [data, setData] = useState([]);
   const [monthName, setMonthName] = useState("");
-  const [mosqueName, setMosqueName] = useState("AlFalah");
+  const [mosqueName, setMosqueName] = useState("DarulQuranMasjid");
   const [location, setLocation] = useState("");
   const [mosqueImage, setMosqueImage] = useState("");
 
@@ -42,7 +42,7 @@ const AlFalah = () => {
 
         setMosqueImage(LIN.default || `Unknown Location ${mosqueName}`);
         setLocation(loc);
-        setMosqueName("AlFalah");
+        setMosqueName("DarulQuranMasjid");
         setData(json.prayerTimes || []);
       } catch (error) {
         console.error(
@@ -54,29 +54,30 @@ const AlFalah = () => {
 
     loadData();
   }, [mosqueName]);
-  const { Mosquelocation, mosqueImg } = mosqueImage;
+  const { MosqueName, Mosquelocation, mosqueImg } = mosqueImage;
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100">
-      {/* Top Navigation */}
+      {/*---------------------- Top Navigation-------------------------------*/}
       <header className="sticky top-0 z-50 shadow bg-green-800">
         <Menu />
       </header>
 
-      {/* background img */}
+      {/* -----------------------background img----------------------------- */}
       <section
-        className="relative w-full  h-[37vh]  min-h-[200px]  bg-cover  md:bg-contain  bg-no-repeat bg-fixed"
+        className="relative w-full  h-[45vh]  min-h-[200px]   bg-size-[100%_50vh]   bg-no-repeat bg-fixed"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('${mosqueImg}')`,
         }}
       >
         <div className="absolute inset-0  flex flex-col justify-center items-center text-center px-6">
-          <span className="text-2xl  font-semibold backdrop-blur-xs ">Islamic Center of North Detroit </span>
           <h1 className="text-4xl md:text-6xl font-serif text-white drop-shadow-lg">
-            Masjid Al-Falah
+            {MosqueName}
           </h1>
-          <p className="mt-2 text-lg md:text-2xl text-gray-200">{Mosquelocation}</p>
+          <a href="https://share.google/5vtZZuwHhwoXNMGci" className="mt-2 text-lg md:text-2xl text-gray-200">
+            {Mosquelocation}
+          </a>
         </div>
-        {/* <div className="absolute bottom-0 w-full">
+        <div className="absolute bottom-0 w-full">
           <svg
             viewBox="0 0 1200 100"
             preserveAspectRatio="none"
@@ -87,15 +88,22 @@ const AlFalah = () => {
               fill="#ffffff"
             />
           </svg>
-        </div> */}
+        </div>
       </section>
-
+      <div>
+        <h2 className="text-3xl font-bold">November 2023 DEMO</h2>
+      </div>
       {/* TOP BAR */}
       {/* Main Layout */}
       <main className="containr mx-auto  py-2 grid grid-cols-1 md:grid-cols-4 gap-3">
         {/* Sidebar */}
-        
-
+        <aside className="order-2 md:order-none bg-white rounded-xl shadow-lg p-4 border border-green-200 transition duration-300 hover:shadow-xl">
+          <Leftbox
+            currentMonth={monthName}
+            location={location}
+            mosqueName={mosqueName}
+          />
+        </aside>
         {/* Main Content */}
         <section className="order-1 md:order-none  md:col-span-3 space-y-6">
           <div className="bg-white rounded-xl shadow-lg p-2 border border-green-200 hover:shadow-xl transition duration-300">
@@ -111,17 +119,9 @@ const AlFalah = () => {
             <PrayerRow data={data} monthName={monthName} location={location} />
           </div>
         </section>
-
-        <aside className="order-2 md:order-none bg-white rounded-xl shadow-lg p-4 border border-green-200 transition duration-300 hover:shadow-xl">
-          <Leftbox
-            currentMonth={monthName}
-            location={location}
-            mosqueName={mosqueName}
-          />
-        </aside>
       </main>
     </div>
   );
 };
 
-export default AlFalah;
+export default DarulQuranMasjid;

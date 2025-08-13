@@ -1,0 +1,624 @@
+{
+  "prayerTimes": [
+    {
+      "date": "01",
+      "islamicDate":"07",
+      "day": "Fri",
+      "adhan": {
+        "fajr": "04:52",
+        "sunrise": "06:23",
+        "dhuhr": "01:30",
+        "asr": "06:43",
+        "maghrib": "08:53",
+        "isha": "10:26"
+      },
+      "iqamah": {
+        "fajr": "05:40",
+        "dhuhr": "01:45",
+        "asr": "06:20",
+        "maghrib": "5 min after azan",
+        "isha": "10:45"
+      }
+    },
+    {
+      "date": "02",
+      "islamicDate":"08",
+      "day": "Sat",
+      "adhan": {
+        "fajr": "04:54",
+        "sunrise": "06:24",
+        "dhuhr": "01:39",
+        "asr": "06:43",
+        "maghrib": "08:52",
+        "isha": "10:24"
+      },
+      "iqamah": {
+        "fajr": "05:41",
+        "dhuhr": "01:46",
+        "asr": "06:21",
+        "maghrib": "5 min after azan",
+        "isha": "10:44"
+      }
+    },
+    {
+      "date": "03",
+      "islamicDate":"09",
+      "day": "Sun",
+      "adhan": {
+        "fajr": "04:56",
+        "sunrise": "06:25",
+        "dhuhr": "01:39",
+        "asr": "06:42",
+        "maghrib": "08:50",
+        "isha": "10:23"
+      },
+      "iqamah": {
+        "fajr": "05:42",
+        "dhuhr": "01:47",
+        "asr": "06:22",
+        "maghrib": "5 min after azan",
+        "isha": "10:43"
+      }
+    },
+    {
+      "date": "04",
+      "islamicDate":"10",
+      "day": "Mon",
+      "adhan": {
+        "fajr": "04:57",
+        "sunrise": "06:25",
+        "dhuhr": "01:39",
+        "asr": "06:41",
+        "maghrib": "08:50",
+        "isha": "10:21"
+      },
+      "iqamah": {
+        "fajr": "05:43",
+        "dhuhr": "01:48",
+        "asr": "06:23",
+        "maghrib": "5 min after azan",
+        "isha": "10:42"
+      }
+    },
+    {
+      "date": "05",
+      "islamicDate":"11",
+      "day": "Tue",
+      "adhan": {
+        "fajr": "04:58",
+        "sunrise": "06:26",
+        "dhuhr": "01:39",
+        "asr": "06:40",
+        "maghrib": "08:48",
+        "isha": "10:20"
+      },
+      "iqamah": {
+        "fajr": "05:44",
+        "dhuhr": "01:49",
+        "asr": "06:24",
+        "maghrib": "5 min after azan",
+        "isha": "10:41"
+      }
+    },
+    {
+      "date": "06",
+      "islamicDate":"12",
+      "day": "Wed",
+      "adhan": {
+        "fajr": "05:00",
+        "sunrise": "06:27",
+        "dhuhr": "01:39",
+        "asr": "06:40",
+        "maghrib": "08:47",
+        "isha": "10:18"
+      },
+      "iqamah": {
+        "fajr": "05:45",
+        "dhuhr": "01:50",
+        "asr": "06:25",
+        "maghrib": "5 min after azan",
+        "isha": "10:40"
+      }
+    },
+    {
+      "date": "07",
+      "islamicDate":"13",
+      "day": "Thu",
+      "adhan": {
+        "fajr": "05:01",
+        "sunrise": "06:28",
+        "dhuhr": "01:39",
+        "asr": "06:39",
+        "maghrib": "08:46",
+        "isha": "10:17"
+      },
+      "iqamah": {
+        "fajr": "05:46",
+        "dhuhr": "01:51",
+        "asr": "06:26",
+        "maghrib": "5 min after azan",
+        "isha": "10:39"
+      }
+    },
+    {
+      "date": "08",
+      "islamicDate":"14",
+      "day": "Fri",
+      "adhan": {
+        "fajr": "05:02",
+        "sunrise": "06:30",
+        "dhuhr": "01:30",
+        "asr": "06:38",
+        "maghrib": "08:45",
+        "isha": "10:14"
+      },
+      "iqamah": {
+        "fajr": "05:47",
+        "dhuhr": "01:45",
+        "asr": "06:27",
+        "maghrib": "5 min after azan",
+        "isha": "10:38"
+      }
+    },
+    {
+      "date": "09",
+      "islamicDate":"15",
+      "day": "Sat",
+      "adhan": {
+        "fajr": "05:04",
+        "sunrise": "06:31",
+        "dhuhr": "01:38",
+        "asr": "06:37",
+        "maghrib": "08:43",
+        "isha": "10:13"
+      },
+      "iqamah": {
+        "fajr": "05:48",
+        "dhuhr": "01:46",
+        "asr": "06:28",
+        "maghrib": "5 min after azan",
+        "isha": "10:37"
+      }
+    },
+    {
+      "date": "10",
+      "islamicDate":"16",
+      "day": "Sun",
+      "adhan": {
+        "fajr": "05:05",
+        "sunrise": "06:32",
+        "dhuhr": "01:38",
+        "asr": "06:36",
+        "maghrib": "08:42",
+        "isha": "10:11"
+      },
+      "iqamah": {
+        "fajr": "05:49",
+        "dhuhr": "01:47",
+        "asr": "06:29",
+        "maghrib": "5 min after azan",
+        "isha": "10:36"
+      }
+    },
+    {
+      "date": "11",
+      "islamicDate":"17",
+      "day": "Mon",
+      "adhan": {
+        "fajr": "05:06",
+        "sunrise": "06:34",
+        "dhuhr": "01:38",
+        "asr": "06:35",
+        "maghrib": "08:41",
+        "isha": "10:09"
+      },
+      "iqamah": {
+        "fajr": "05:50",
+        "dhuhr": "01:48",
+        "asr": "06:30",
+        "maghrib": "5 min after azan",
+        "isha": "10:35"
+      }
+    },
+    {
+      "date": "12",
+      "islamicDate":"18",
+      "day": "Tue",
+      "adhan": {
+        "fajr": "05:08",
+        "sunrise": "06:35",
+        "dhuhr": "01:38",
+        "asr": "06:34",
+        "maghrib": "08:39",
+        "isha": "10:07"
+      },
+      "iqamah": {
+        "fajr": "05:51",
+        "dhuhr": "01:49",
+        "asr": "06:31",
+        "maghrib": "5 min after azan",
+        "isha": "10:34"
+      }
+    },
+    {
+      "date": "13",
+      "islamicDate":"19",
+      "day": "Wed",
+      "adhan": {
+        "fajr": "05:10",
+        "sunrise": "06:36",
+        "dhuhr": "01:38",
+        "asr": "06:33",
+        "maghrib": "08:38",
+        "isha": "10:05"
+      },
+      "iqamah": {
+        "fajr": "05:52",
+        "dhuhr": "01:50",
+        "asr": "06:32",
+        "maghrib": "5 min after azan",
+        "isha": "10:33"
+      }
+    },
+    {
+      "date": "14",
+      "islamicDate":"20",
+      "day": "Thu",
+      "adhan": {
+        "fajr": "05:11",
+        "sunrise": "06:37",
+        "dhuhr": "01:37",
+        "asr": "06:32",
+        "maghrib": "08:36",
+        "isha": "10:03"
+      },
+      "iqamah": {
+        "fajr": "05:53",
+        "dhuhr": "01:51",
+        "asr": "06:33",
+        "maghrib": "5 min after azan",
+        "isha": "10:32"
+      }
+    },
+    {
+      "date": "15",
+      "islamicDate":"21",
+      "day": "Fri",
+      "adhan": {
+        "fajr": "05:13",
+        "sunrise": "06:38",
+        "dhuhr": "01:30",
+        "asr": "06:31",
+        "maghrib": "08:35",
+        "isha": "10:02"
+      },
+      "iqamah": {
+        "fajr": "05:54",
+        "dhuhr": "01:45",
+        "asr": "06:34",
+        "maghrib": "5 min after azan",
+        "isha": "10:31"
+      }
+    },
+    {
+      "date": "16",
+      "islamicDate":"22",
+      "day": "Sat",
+      "adhan": {
+        "fajr": "05:14",
+        "sunrise": "06:39",
+        "dhuhr": "01:37",
+        "asr": "06:30",
+        "maghrib": "08:33",
+        "isha": "10:00"
+      },
+      "iqamah": {
+        "fajr": "05:55",
+        "dhuhr": "01:49",
+        "asr": "06:35",
+        "maghrib": "5 min after azan",
+        "isha": "10:30"
+      }
+    },
+    {
+      "date": "17",
+      "islamicDate":"23",
+      "day": "Sun",
+      "adhan": {
+        "fajr": "05:16",
+        "sunrise": "06:40",
+        "dhuhr": "01:37",
+        "asr": "06:29",
+        "maghrib": "08:32",
+        "isha": "09:58"
+      },
+      "iqamah": {
+        "fajr": "05:56",
+        "dhuhr": "01:50",
+        "asr": "06:36",
+        "maghrib": "5 min after azan",
+        "isha": "10:29"
+      }
+    },
+    {
+      "date": "18",
+      "islamicDate":"24",
+      "day": "Mon",
+      "adhan": {
+        "fajr": "05:17",
+        "sunrise": "06:41",
+        "dhuhr": "01:37",
+        "asr": "06:28",
+        "maghrib": "08:30",
+        "isha": "09:57"
+      },
+      "iqamah": {
+        "fajr": "05:57",
+        "dhuhr": "01:51",
+        "asr": "06:37",
+        "maghrib": "5 min after azan",
+        "isha": "10:28"
+      }
+    },
+    {
+      "date": "19",
+      "islamicDate":"25",
+      "day": "Tue",
+      "adhan": {
+        "fajr": "05:19",
+        "sunrise": "06:42",
+        "dhuhr": "01:37",
+        "asr": "06:27",
+        "maghrib": "08:29",
+        "isha": "09:55"
+      },
+      "iqamah": {
+        "fajr": "05:58",
+        "dhuhr": "01:52",
+        "asr": "06:38",
+        "maghrib": "5 min after azan",
+        "isha": "10:27"
+      }
+    },
+    {
+      "date": "20",
+      "islamicDate":"26",
+      "day": "Wed",
+      "adhan": {
+        "fajr": "05:20",
+        "sunrise": "06:43",
+        "dhuhr": "01:36",
+        "asr": "06:26",
+        "maghrib": "08:27",
+        "isha": "09:52"
+      },
+      "iqamah": {
+        "fajr": "05:59",
+        "dhuhr": "01:53",
+        "asr": "06:39",
+        "maghrib": "5 min after azan",
+        "isha": "10:26"
+      }
+    },
+    {
+      "date": "21",
+      "islamicDate":"27",
+      "day": "Thu",
+      "adhan": {
+        "fajr": "05:21",
+        "sunrise": "06:44",
+        "dhuhr": "01:36",
+        "asr": "06:25",
+        "maghrib": "08:26",
+        "isha": "09:51"
+      },
+      "iqamah": {
+        "fajr": "06:00",
+        "dhuhr": "01:54",
+        "asr": "06:40",
+        "maghrib": "5 min after azan",
+        "isha": "10:25"
+      }
+    },
+    {
+      "date": "22",
+      "islamicDate":"28",
+      "day": "Fri",
+      "adhan": {
+        "fajr": "05:23",
+        "sunrise": "06:45",
+        "dhuhr": "01:30",
+        "asr": "06:24",
+        "maghrib": "08:24",
+        "isha": "09:49"
+      },
+      "iqamah": {
+        "fajr": "06:01",
+        "dhuhr": "01:45",
+        "asr": "06:41",
+        "maghrib": "5 min after azan",
+        "isha": "10:24"
+      }
+    },
+    {
+      "date": "23",
+      "islamicDate":"29",
+      "day": "Sat",
+      "adhan": {
+        "fajr": "05:24",
+        "sunrise": "06:46",
+        "dhuhr": "01:36",
+        "asr": "06:23",
+        "maghrib": "08:23",
+        "isha": "09:47"
+      },
+      "iqamah": {
+        "fajr": "06:02",
+        "dhuhr": "01:46",
+        "asr": "06:42",
+        "maghrib": "5 min after azan",
+        "isha": "10:23"
+      }
+    },
+    {
+      "date": "24",
+      "islamicDate":"01",
+      "day": "Sun",
+      "adhan": {
+        "fajr": "05:26",
+        "sunrise": "06:47",
+        "dhuhr": "01:35",
+        "asr": "06:22",
+        "maghrib": "08:21",
+        "isha": "09:45"
+      },
+      "iqamah": {
+        "fajr": "06:03",
+        "dhuhr": "01:47",
+        "asr": "06:43",
+        "maghrib": "5 min after azan",
+        "isha": "10:22"
+      }
+    },
+    {
+      "date": "25",
+      "islamicDate":"02",
+      "day": "Mon",
+      "adhan": {
+        "fajr": "05:27",
+        "sunrise": "06:48",
+        "dhuhr": "01:35",
+        "asr": "06:21",
+        "maghrib": "08:20",
+        "isha": "09:43"
+      },
+      "iqamah": {
+        "fajr": "06:04",
+        "dhuhr": "01:48",
+        "asr": "06:44",
+        "maghrib": "5 min after azan",
+        "isha": "10:21"
+      }
+    },
+    {
+      "date": "26",
+      "islamicDate":"03",
+      "day": "Tue",
+      "adhan": {
+        "fajr": "05:28",
+        "sunrise": "06:49",
+        "dhuhr": "01:35",
+        "asr": "06:20",
+        "maghrib": "08:18",
+        "isha": "09:41"
+      },
+      "iqamah": {
+        "fajr": "06:05",
+        "dhuhr": "01:49",
+        "asr": "06:45",
+        "maghrib": "5 min after azan",
+        "isha": "10:20"
+      }
+    },
+    {
+      "date": "27",
+      "islamicDate":"04",
+      "day": "Wed",
+      "adhan": {
+        "fajr": "05:30",
+        "sunrise": "06:50",
+        "dhuhr": "01:34",
+        "asr": "06:19",
+        "maghrib": "08:17",
+        "isha": "09:39"
+      },
+      "iqamah": {
+        "fajr": "06:06",
+        "dhuhr": "01:50",
+        "asr": "06:46",
+        "maghrib": "5 min after azan",
+        "isha": "10:19"
+      }
+    },
+    {
+      "date": "28",
+      "islamicDate":"05",
+      "day": "Thu",
+      "adhan": {
+        "fajr": "05:31",
+        "sunrise": "06:51",
+        "dhuhr": "01:34",
+        "asr": "06:18",
+        "maghrib": "08:15",
+        "isha": "09:37"
+      },
+      "iqamah": {
+        "fajr": "06:07",
+        "dhuhr": "01:51",
+        "asr": "06:47",
+        "maghrib": "5 min after azan",
+        "isha": "10:18"
+      }
+    },
+    {
+      "date": "29",
+      "islamicDate":"06",
+      "day": "Fri",
+      "adhan": {
+        "fajr": "05:32",
+        "sunrise": "06:52",
+        "dhuhr": "01:30",
+        "asr": "06:17",
+        "maghrib": "08:14",
+        "isha": "09:35"
+      },
+      "iqamah": {
+        "fajr": "06:08",
+        "dhuhr": "01:45",
+        "asr": "06:48",
+        "maghrib": "5 min after azan",
+        "isha": "10:17"
+      }
+    },
+    {
+      "date": "30",
+      "islamicDate":"07",
+      "day": "Sat",
+      "adhan": {
+        "fajr": "05:34",
+        "sunrise": "06:54",
+        "dhuhr": "01:33",
+        "asr": "06:15",
+        "maghrib": "08:12",
+        "isha": "09:33"
+      },
+      "iqamah": {
+        "fajr": "06:09",
+        "dhuhr": "01:46",
+        "asr": "06:49",
+        "maghrib": "5 min after azan",
+        "isha": "10:16"
+      }
+    },
+    {
+      "date": "31",
+      "islamicDate":"08",
+      "day": "Sun",
+      "adhan": {
+        "fajr": "05:35",
+        "sunrise": "06:55",
+        "dhuhr": "01:33",
+        "asr": "06:13",
+        "maghrib": "08:10",
+        "isha": "09:31"
+      },
+      "iqamah": {
+        "fajr": "06:10",
+        "dhuhr": "01:47",
+        "asr": "06:50",
+        "maghrib": "5 min after azan",
+        "isha": "10:15"
+      }
+    }
+  ]
+}

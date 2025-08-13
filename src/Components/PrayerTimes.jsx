@@ -35,7 +35,7 @@ const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
   if (!todayData) return <p>Loading today's prayer times...</p>;
   const { day, date } = todayData;
   const { fajr, dhuhr, asr, maghrib, isha } = todayData.iqamah;
-  const { MosqueName, Mosquelocation, mosqueImg } = locations;
+  const { MosqueName, Mosquelocation,iquamahBg } = locations;
   //// const { fajr, sunrise, dhuhr, asr, maghrib, isha} = todayData.iqamah;
 
   return (
@@ -43,7 +43,7 @@ const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
       <div
         className=" rounded-2xl bg-fixed bg-cover bg-no-repeat  bg-center  py-2"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('${mosqueImg}')`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('${iquamahBg}')`,
         }}
       >
         {/* <section className=" backdrop-blur-xs  text-center bg-gradient-to-r from-blue-0 to-indigo-0 text-yellow-400 rounded-2xl shadow-lg max-w-md mx-auto">
@@ -57,13 +57,13 @@ const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
         </section> */}
 
         {/* SECTION-02 */}
-        <section className="my-4 md:w-2/3 mx-auto p-2 bg-white rounded-lg shadow-md">
+        <section className="my-4 md:w-2/3 mx-auto p-2 backdrop-blur-xs rounded-lg shadow-lg shadow-black">
           <h2 className="text-xl text-center font-bold">IQAMAH TIME</h2>
           <div className="border border-gray-400 rounded shadow-md text-sm">
             <div className="bg-gray-700 text-white text-center text-xl py-2 font-bold">
               {currentMonth} {date}-{day}
             </div>
-            <div className="bg-gray-100 py-3 shadow-2xl shadow-purple-300 space-y-1 font-medium text-gray-800">
+            <div className="backdrop-blur-lg py-3 shadow-2xl shadow-black space-y-1 font-medium text-gray-100">
               <div className="flex justify-between border-b px-2">
                 <span>Fajr</span>
                 <span>{fajr}</span>
@@ -88,59 +88,7 @@ const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
           </div>
         </section>
       </div>
-    </>
-    // <section className="flex gap-2 justify-center sticky top-0">
-    // <div className="max-w-md mt-10 p-4 shadow-xl rounded-xl bg-white">
-    //   <h1 className="text-2xl font-bold text-center mb-4">
-    //     Prayer Times for {day}, {currentMonth} {date} ,{mosqueName} , {location}
-    //   </h1>
-    //   <ul className="space-y-2 text-lg">
-    //     <li><strong>Fajr:</strong> {fajr}   <strong>{todayData.iqamah.fajr}</strong></li>
-    //     <li><strong>Sunrise:</strong> {sunrise}</li>
-    //     <li><strong>Dhuhr:</strong> {dhuhr}</li>
-    //     <li><strong>Asr:</strong> {asr}</li>
-    //     <li><strong>Maghrib:</strong> {maghrib}</li>
-    //     <li><strong>Isha:</strong> {isha}</li>
-    //   </ul>
-    // </div>
-
-    //   {/* JUMMAH DATE */}
-    //   <div className="max-w-md mt-10 p-4 shadow-md rounded-xl shadow-amber-300">
-    //     <h1 className="text-3xl font-extrabold text-center">JUMMAH DATE</h1>
-    //     <table className="w-full table-auto border-collapse text-center mt-4">
-    //       <thead>
-    //         <tr className="bg-blue-100 text-gray-800">
-    //           <th>Date</th>
-    //           <th>Time</th>
-    //         </tr>
-    //       </thead>
-    //       <tbody>
-    //         {Data.map((prayer, index) => {
-    //           const isTomorrowJummah =
-    //             prayer.day === "Fri" && Number(prayer.date) === Number(todayDate) + 1;
-    //           const isTodayJumma =
-    //             prayer.day === "Fri" && Number(prayer.date) === Number(todayDate);
-
-    //           if (prayer.day === "Fri") {
-    //             return (
-    //               <tr
-    //                 key={index}
-    //                 className={`hover:bg-gray-50 ${
-    //                   isTomorrowJummah ? "bg-emerald-300" : ""
-    //                 } ${isTodayJumma ? "bg-amber-600" : ""}`}
-    //               >
-    //                 <td>{prayer.date}</td>
-    //                 <td>{prayer.adhan.dhuhr}</td>
-    //               </tr>
-    //             );
-    //           }
-    //           return null;
-    //         })}
-    //       </tbody>
-    //     </table>
-    //   </div>
-    // </section>
-  );
+    </>);
 };
 
 export default PrayerTimes;
