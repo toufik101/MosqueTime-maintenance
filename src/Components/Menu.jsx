@@ -7,7 +7,7 @@ const Menu = () => {
   const navItems = [
     { name: "Baitul Mukarram", path: "/" },
     { name: "MASJID AL-FALAH", path: "/alfalah" },
-    { name: "Mosque Fath", path: "/mosquefath" },
+    { name: "MASJID AL-FATH", path: "/mosquefath" },
     { name: "IONA MASJID", path: "/IONAMASJID" },
     { name: "MASJIDUN-NUR", path: "/masjidunnur" },
     { name: "DARUL QURAN MASJID", path: "/darulquranmasjid" },
@@ -15,6 +15,9 @@ const Menu = () => {
       name: "Center for Dawah and Research Masjid (CDR) ",
       path: "/CenterForDawah",
     },
+    { name: "Michigan Islamic Institute", path: "/MischiganIslamicInstitute" },
+    { name: "Al Ihsaan Islamic Center", path: "/alihsaanislamiccenter" },
+    { name: "DARUL ULOOM MICHIGAN", path: "/darululoommichigan" },
   ];
   return (
     <div className="relative  text-left">

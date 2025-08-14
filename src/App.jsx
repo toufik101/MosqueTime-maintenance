@@ -8,6 +8,9 @@ import IONAMasjid from "./Pages/IONAMasjid";
 import MasjidunNur from "./Pages/MasjidunNur";
 import DarulQuranMasjid from "./Pages/DarulQuranMasjid";
 import CenterForDawah from "./Pages/CenterForDawah";
+import MischiganIslamicInstitute from "./Pages/MischiganIslamicInstitute";
+import AlIhsaanIslamicCenter from "./Pages/AlIhsaanIslamicCenter";
+import DarulUloomMichigan from "./Pages/DarulUloomMichigan";
 
 function App() {
   return (
@@ -22,6 +25,19 @@ function App() {
           <Route path="/masjidunnur" element={<MasjidunNur />} />
           <Route path="/darulquranmasjid" element={<DarulQuranMasjid />} />
           <Route path="/CenterForDawah" element={<CenterForDawah />} />
+          <Route
+            path="/MischiganIslamicInstitute"
+            element={<MischiganIslamicInstitute />}
+          />
+          <Route
+            path="/alihsaanislamiccenter"
+            element={<AlIhsaanIslamicCenter />}
+          />
+          <Route
+            path="/darululoommichigan"
+            element={<DarulUloomMichigan />}
+          />
+
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>

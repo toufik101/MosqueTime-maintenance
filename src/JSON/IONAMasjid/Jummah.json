@@ -1,14 +1,10 @@
 [
     {
         "title":"1st jummah",
-        "time":"12:00 pm"
+        "time":"12:10 pm"
     },
     {
-        "title":"2nd Jummah (Main)",
+        "title":"2nd Jummah",
         "time":" 1:30 pm"
-    },
-    {
-        "title":"3rd Jummah",
-        "time":" 2:45 pm"
     }
 ]

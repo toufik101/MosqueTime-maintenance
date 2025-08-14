@@ -3,10 +3,10 @@ import Leftbox from "../Components/Leftbox";
 import PrayerTimes from "../Components/PrayerTimes";
 import PrayerRow from "../Components/PrayerRow";
 import Menu from "../Components/Menu";
-const BaitulMukarram = () => {
+const DarulUloomMichigan = () => {
   const [data, setData] = useState([]);
   const [monthName, setMonthName] = useState("");
-  const [mosqueName, setMosqueName] = useState("BaitulMukarram");
+  const [mosqueName, setMosqueName] = useState("DarulUloomMichigan");
   const [location, setLocation] = useState("");
   const [mosqueImage, setMosqueImage] = useState("");
 
@@ -42,7 +42,7 @@ const BaitulMukarram = () => {
 
         setMosqueImage(LIN.default || `Unknown Location ${mosqueName}`);
         setLocation(loc);
-        setMosqueName("BaitulMukarram");
+        setMosqueName("DarulUloomMichigan");
         setData(json.prayerTimes || []);
       } catch (error) {
         console.error(
@@ -73,7 +73,10 @@ const BaitulMukarram = () => {
           <h1 className="text-4xl md:text-6xl font-serif text-white drop-shadow-lg">
             {MosqueName}
           </h1>
-          <a href="https://maps.app.goo.gl/3bRgx5tfemrAEnL86" className="mt-2 text-lg md:text-2xl text-gray-200">
+          <a
+            href="https://share.google/9RecmEnh7deYNWvWY"
+            className="mt-2 text-lg md:text-2xl text-gray-200"
+          >
             {Mosquelocation}
           </a>
         </div>
@@ -124,4 +127,4 @@ const BaitulMukarram = () => {
   );
 };
 
-export default BaitulMukarram;
+export default DarulUloomMichigan;

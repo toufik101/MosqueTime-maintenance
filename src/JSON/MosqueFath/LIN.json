@@ -1,4 +1,5 @@
-{ "MosqueName":"AL_FATH",
+{ "MosqueName":"MASJID AL-FATH",
   "Mosquelocation": "24703 Ryan Rd. Warren, MI 48091 (586) 298-1198",
-  "mosqueImg": "/src/assets/Mosque-Img/Al-Fath.jpg"
+  "mosqueImg": "/src/assets/Mosque-Img/Al-Fath.jpg",
+    "iquamahBg":"/src/assets/Mosque-Img/IQUAMAH-BG.jpg"
 }
