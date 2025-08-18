@@ -11,7 +11,7 @@ import CenterForDawah from "./Pages/CenterForDawah";
 import MischiganIslamicInstitute from "./Pages/MischiganIslamicInstitute";
 import AlIhsaanIslamicCenter from "./Pages/AlIhsaanIslamicCenter";
 import DarulUloomMichigan from "./Pages/DarulUloomMichigan";
-
+import AddNewMosque from "./Components/AddNewMosque";
 function App() {
   return (
     <>
@@ -37,9 +37,13 @@ function App() {
             path="/darululoommichigan"
             element={<DarulUloomMichigan />}
           />
-
+          <Route
+            path="/addmosque"
+            element={<AddNewMosque />}
+          />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
+
       </BrowserRouter>
     </>
   );
