@@ -85,7 +85,7 @@ const AddNewMosque = () => {
         {/* Upload file */}
         <div>
           <label className="block text-gray-700 font-semibold mb-1">
-            Prayer Time Schedule Picture
+            Prayer Time Schedule Picture File size must be under 50KB.
           </label>
           <input
             type="file"
