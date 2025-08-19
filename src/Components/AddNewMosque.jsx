@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const AddNewMosque = () => {
   const [mosqueName, setMosqueName] = useState("");
@@ -16,6 +17,16 @@ const AddNewMosque = () => {
     }
   };
 
+  // convert file to Base64 for email
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (err) => reject(err);
+    });
+  };
+
   // handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,25 +36,31 @@ const AddNewMosque = () => {
       return;
     }
 
-    const formData = new FormData();
-    formData.append("mosqueName", mosqueName);
-    formData.append("file", file);
-
     try {
-      // Send to backend API (example: /api/upload)
-      const response = await fetch("http://localhost:5000/upload", {
-        method: "POST",
-        body: formData,
-      });
+      // Convert image to Base64 string
+      const base64File = await convertBase64(file);
 
-      if (response.ok) {
-        alert("Mosque added successfully!");
-      } else {
-        alert("Error uploading. Please try again.");
+      // Send email via EmailJS
+      const result = await emailjs.send(
+        "service_o1tk5qq", // replace with EmailJS Service ID
+        "template_taxw6qc", // replace with EmailJS Template ID
+        {
+          mosqueName: mosqueName,
+          mosqueImage: base64File,
+          to_email: "toufikamin2000@gmail.com",
+        },
+        "0JePizhY9ypiYLhtO" // replace with EmailJS Public Key
+      );
+
+      if (result.status === 200) {
+        alert("✅ Mosque info sent to your email!");
+        setMosqueName("");
+        setFile(null);
+        setPreview("");
       }
     } catch (error) {
       console.error(error);
-      alert("Something went wrong!");
+      alert("❌ Failed to send email!");
     }
   };
 
@@ -51,10 +68,11 @@ const AddNewMosque = () => {
     <div className="max-w-lg mx-auto bg-white p-6 rounded-2xl shadow-lg mt-6">
       <h2 className="text-2xl font-bold mb-4 text-center">🕌 Add New Mosque</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
-        
         {/* Mosque Name */}
         <div>
-          <label className="block text-gray-700 font-semibold mb-1">Mosque Name</label>
+          <label className="block text-gray-700 font-semibold mb-1">
+            Mosque Name
+          </label>
           <input
             type="text"
             value={mosqueName}
@@ -66,7 +84,9 @@ const AddNewMosque = () => {
 
         {/* Upload file */}
         <div>
-          <label className="block text-gray-700 font-semibold mb-1">Prayer Time Schedule Picture</label>
+          <label className="block text-gray-700 font-semibold mb-1">
+            Prayer Time Schedule Picture
+          </label>
           <input
             type="file"
             accept="image/*"
@@ -79,7 +99,11 @@ const AddNewMosque = () => {
         {preview && (
           <div className="mt-3">
             <p className="font-semibold">Preview:</p>
-            <img src={preview} alt="Preview" className="rounded-lg shadow-md max-h-64" />
+            <img
+              src={preview}
+              alt="Preview"
+              className="rounded-lg shadow-md max-h-64"
+            />
           </div>
         )}
 
@@ -88,7 +112,7 @@ const AddNewMosque = () => {
           type="submit"
           className="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition"
         >
-          Upload Mosque
+          Send to Email
         </button>
       </form>
     </div>
