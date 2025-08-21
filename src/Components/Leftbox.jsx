@@ -9,7 +9,7 @@ const Leftbox = ({ currentMonth, mosqueName }) => {
 
       try {
         const jummahTime = await import(`../JSON/${mosqueName}/Jummah.json`);
-        setJummahData(jummahTime.default || []);
+        setJummahData(jummahTime.default[currentMonth] || []);
       } catch (error) {
         console.log("Jummah Time Loading :", error);
       }
@@ -39,8 +39,8 @@ const Leftbox = ({ currentMonth, mosqueName }) => {
               } text-lg font-semibold flex justify-between items-center px-4 py-3 hover:bg-yellow-300 transition duration-200 ease-in-out`}
               key={index.toLocaleString()}
             >
-              <strong className="text-black">{value.title}</strong>
-              <span className="text-black">{value.time}</span>
+              <strong className="text-black">{value.title} </strong>
+              <span className="text-black">{value.time} </span>
             </li>
           ))}
         </ul>

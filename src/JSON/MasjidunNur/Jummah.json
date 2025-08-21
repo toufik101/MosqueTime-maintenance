@@ -1,6 +1,75 @@
-[
-  {
-    "title": "JUMMAH",
-    "time": "12:50 pm"
-  }
-]
+{
+  "September": [
+    {
+      "title": "JUMMAH",
+      "time": "12:50 pm"
+    }
+  ],
+  "October": [
+    {
+      "title": "JUMMAH",
+      "time": "12:50 pm"
+    }
+  ],
+  "November": [
+    {
+      "title": "JUMMAH",
+      "time": "12:50 pm"
+    }
+  ],
+  "May": [
+    {
+      "title": "JUMMAH",
+      "time": "12:50 pm"
+    }
+  ],
+
+  "March": [
+    {
+      "title": "JUMMAH",
+      "time": "12:50 pm"
+    }
+  ],
+  "June": [
+    {
+      "title": "JUMMAH",
+      "time": "12:50 pm"
+    }
+  ],
+  "July": [
+    {
+      "title": "JUMMAH",
+      "time": "12:50 pm"
+    }
+  ],
+  "January": [
+    {
+      "title": "JUMMAH",
+      "time": "12:50 pm"
+    }
+  ],
+  "Feburary": [
+    {
+      "title": "JUMMAH",
+      "time": "12:50 pm"
+    }
+  ],
+  "December": [
+    {
+      "title": "JUMMAH",
+      "time": "12:50 pm"
+    }
+  ],
+  "April": [
+    {
+      "title": "JUMMAH",
+      "time": "12:50 pm"
+    }
+  ],
+  "August": [
+    {
+      "title": "JUMMAH",
+      "time": "12:50 pm"
+    }
+  ]
+}
