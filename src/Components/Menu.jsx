@@ -6,19 +6,19 @@ const Menu = () => {
   const navigate = useNavigate();
 
   const navItems = [
-    { name: "Baitul Mukarram", path: "/" },
-    { name: "MASJID AL-FALAH", path: "/alfalah" },
-    { name: "MASJID AL-FATH", path: "/mosquefath" },
-    { name: "IONA MASJID", path: "/IONAMASJID" },
-    { name: "MASJIDUN-NUR", path: "/masjidunnur" },
-    { name: "DARUL QURAN MASJID", path: "/darulquranmasjid" },
+    { name: "Baitul Mukarram", path: "/allmosque" },
+    { name: "MASJID AL-FALAH", path: "alfalah" },
+    { name: "MASJID AL-FATH", path: "mosquefath" },
+    { name: "IONA MASJID", path: "IONAMASJID" },
+    { name: "MASJIDUN-NUR", path: "masjidunnur" },
+    { name: "DARUL QURAN MASJID", path: "darulquranmasjid" },
     {
       name: "Center for Dawah and Research Masjid (CDR) ",
-      path: "/CenterForDawah",
+      path: "CenterForDawah",
     },
-    { name: "Michigan Islamic Institute", path: "/MischiganIslamicInstitute" },
-    { name: "Al Ihsaan Islamic Center", path: "/alihsaanislamiccenter" },
-    { name: "DARUL ULOOM MICHIGAN", path: "/darululoommichigan" },
+    { name: "Michigan Islamic Institute", path: "MischiganIslamicInstitute" },
+    { name: "Al Ihsaan Islamic Center", path: "alihsaanislamiccenter" },
+    { name: "DARUL ULOOM MICHIGAN", path: "darululoommichigan" },
   ];
 
   return (
@@ -46,7 +46,7 @@ const Menu = () => {
           </svg>
         </button>
         <button
-          onClick={() => navigate("/addmosque")}
+          onClick={() => navigate("addmosque")}
           className="w-50 px-4 py-2 bg-green-600 border border-s-0 border-green-400  text-white font-medium rounded-md rounded-s-none hover:bg-green-700 shadow-md"
         >
           ➕ Add Mosque

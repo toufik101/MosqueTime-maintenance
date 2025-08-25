@@ -57,10 +57,6 @@ const MischiganIslamicInstitute = () => {
   const { MosqueName, Mosquelocation, mosqueImg } = mosqueImage;
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100">
-      {/*---------------------- Top Navigation-------------------------------*/}
-      <header className="sticky top-0 z-50 shadow bg-green-800">
-        <Menu />
-      </header>
 
       {/* -----------------------background img----------------------------- */}
       <section

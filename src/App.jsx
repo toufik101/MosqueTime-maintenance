@@ -12,38 +12,43 @@ import MischiganIslamicInstitute from "./Pages/MischiganIslamicInstitute";
 import AlIhsaanIslamicCenter from "./Pages/AlIhsaanIslamicCenter";
 import DarulUloomMichigan from "./Pages/DarulUloomMichigan";
 import AddNewMosque from "./Components/AddNewMosque";
+import AllMosque from "./Layouts/AllMosque";
+import HomePagLayout from "./Layouts/HomePagLayout";
+import Home from "./Components/Home";
+import Contact from "./Components/Contact";
 function App() {
   return (
     <>
       {/* Header */}
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<BaitulMukarram />} />
-          <Route path="/alfalah" element={<AlFalah />} />
-          <Route path="/mosquefath" element={<MosqueFath />} />
-          <Route path="/IONAMASJID" element={<IONAMasjid />} />
-          <Route path="/masjidunnur" element={<MasjidunNur />} />
-          <Route path="/darulquranmasjid" element={<DarulQuranMasjid />} />
-          <Route path="/CenterForDawah" element={<CenterForDawah />} />
-          <Route
-            path="/MischiganIslamicInstitute"
-            element={<MischiganIslamicInstitute />}
-          />
-          <Route
-            path="/alihsaanislamiccenter"
-            element={<AlIhsaanIslamicCenter />}
-          />
-          <Route
-            path="/darululoommichigan"
-            element={<DarulUloomMichigan />}
-          />
-          <Route
-            path="/addmosque"
-            element={<AddNewMosque />}
-          />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
+          {/* All Mosque List */}
+          <Route element={<HomePagLayout />}>
+            <Route index element={<Home />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
 
+          <Route path="/allmosque" element={<AllMosque />}>
+            <Route index  element={<BaitulMukarram />} />
+            <Route path="alfalah" element={<AlFalah />} />
+            <Route path="mosquefath" element={<MosqueFath />} />
+            <Route path="ionamasjid" element={<IONAMasjid />} />
+            <Route path="masjidunnur" element={<MasjidunNur />} />
+            <Route path="darulquranmasjid" element={<DarulQuranMasjid />} />
+            <Route path="centerfordawah" element={<CenterForDawah />} />
+            <Route
+              path="mischiganislamicinstitute"
+              element={<MischiganIslamicInstitute />}
+            />
+            <Route
+              path="alihsaanislamiccenter"
+              element={<AlIhsaanIslamicCenter />}
+            />
+            <Route path="darululoommichigan" element={<DarulUloomMichigan />} />
+            <Route path="addmosque" element={<AddNewMosque />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Route>
+        </Routes>
       </BrowserRouter>
     </>
   );

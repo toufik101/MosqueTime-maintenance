@@ -54,10 +54,6 @@ const MosqueFath = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100">
-      {/* Top Navigation */}
-      <header className="sticky top-0 z-50 shadow bg-green-800">
-        <Menu />
-      </header>
       {/* Main Layout */}
       <main className="containr mx-auto  py-2 grid grid-cols-1 md:grid-cols-4 gap-3">
         {/* Sidebar */}

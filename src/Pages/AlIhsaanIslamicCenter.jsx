@@ -57,11 +57,6 @@ const AlIhsaanIslamicCenter = () => {
   const { MosqueName, Mosquelocation, mosqueImg } = mosqueImage;
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100">
-      {/*---------------------- Top Navigation-------------------------------*/}
-      <header className="sticky top-0 z-50 shadow bg-green-800">
-        <Menu />
-      </header>
-
       {/* -----------------------background img----------------------------- */}
       <section
         className="relative w-full  h-[45vh]  min-h-[200px]   bg-size-[100%_50vh]   bg-no-repeat bg-fixed"
