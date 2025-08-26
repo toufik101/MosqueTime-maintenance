@@ -29,7 +29,7 @@ const Contact = () => {
               📞 <strong>Phone:</strong> <a href="https://wa.me/15864388353">+1 (586) 438-8353</a>
             </li>
             <li>
-              <strong>Email:</strong>{" "}
+              <strong>Email:</strong>
               <a href="mailto:info@mosque.com">info@mosque.com</a>
             </li>
           </ul>
@@ -52,7 +52,7 @@ const Contact = () => {
           <h2 className="text-2xl font-semibold text-green-700 mb-6">
             Send Us a Message
           </h2>
-          <form className="space-y-5">
+          <form  className="space-y-5">
             <div>
               <label className="block text-gray-600 mb-2">Your Name</label>
               <input

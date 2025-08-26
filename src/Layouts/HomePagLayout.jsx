@@ -5,7 +5,7 @@ const HomePagLayout = () => {
 
   return (
     <>
-    <div className="sticky top-0 z-50">
+    <div className="sticky w-full top-0 z-50">
         <MainMenu/>
     </div>
 
