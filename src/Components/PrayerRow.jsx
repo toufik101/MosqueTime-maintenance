@@ -30,12 +30,12 @@ const PrayerRow = ({ data, monthName }) => {
               key={index}
               className={`text-sm border-b  hover:bg-blue-50 
                 ${prayer.date === "10" || prayer.date === "21" ? "border-t-7 border-black-300" : ""}
-                ${prayer.day === "Fri" ? "bg-red-200" : ""}
+                ${prayer.day.slice(0,3) === "Fri" ? "bg-red-200" : ""}
                 ${prayer.date === todayDate ? "bg-emerald-300 font-bold" : ""}`}
             >
               <td className="py-1">{prayer.date}</td>
               <td >{prayer.islamicDate}</td>
-              <td>{prayer.day}</td>
+              <td>{prayer.day.slice(0,3)}</td>
               <td>{prayer.adhan.fajr}</td>
               <td>{prayer.adhan.sunrise}</td>
               <td>{prayer.adhan.dhuhr}</td>

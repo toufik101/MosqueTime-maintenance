@@ -5,6 +5,7 @@ const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
   const [todayData, setTodayData] = useState(null);
   // const [todayDate, setTodayDate] = useState("");
   const [locations, setLocation] = useState("");
+  let [jummahData, setJummahData] = useState([]);
 
   useEffect(() => {
     const loadData = async () => {
@@ -26,6 +27,10 @@ const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
         //! setTodayDate(todayDateStr);
         //// setLocation(json.default.location || "Unknown Location");
         setLocation(LIN.default || `Unknown Location ${mosqueName}`);
+
+        // JUMMAH SETTING
+        const jummahTime = await import(`../JSON/${mosqueName}/Jummah.json`);
+        setJummahData(jummahTime.default[currentMonth] || []);
       } catch (error) {
         console.error("Error loading prayer times:", error);
       }
@@ -69,9 +74,35 @@ const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
                 <span>Fajr</span>
                 <span>{fajr}</span>
               </div>
-              <div className="flex justify-between border-b px-2">
-                <span>Zuhr</span>
-                <span>{dhuhr}</span>
+              <div
+                className={`flex justify-between items-center border-b px-2 ${
+                  day === "Friday" ? "bg-red-800 p-2 font-bold" : ""
+                }`}
+              >
+                <span>{day == "Friday" ? "Jummah" : "Dhuhr"}</span>
+                <span>
+                  {day == "Friday" ? (
+                    <ul className="flex gap-0.5 md:gap-2 mx-auto list-none divide-y  divide-yellow-300 rounded-xl overflow-hidden shadow-md">
+                      {jummahData.map((value, index) => (
+                        <li
+                          className={`${
+                            value.title.slice(0, 3) === "1st"
+                              ? "bg-yellow-200"
+                              : value.title.slice(0, 3) === "2nd"
+                              ? "bg-green-200"
+                              : value.title.slice(0, 3) === "3rd"
+                              ? "bg-yellow-300"
+                              : "bg-red-400"
+                          } md:text-lg text- font-semibold flex justify-between items-center   py-2 px-1 hover:bg-yellow-300 transition duration-200 ease-in-out md:px-2 md:py-0`}
+                          key={index.toLocaleString()}
+                        >
+                          <strong className="text-black">{value.title+" -"}</strong>
+                          <span className="text-black"> {value.time} </span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : dhuhr}
+                </span>
               </div>
               <div className="flex justify-between border-b px-2">
                 <span>Asr</span>
