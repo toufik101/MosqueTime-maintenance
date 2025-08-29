@@ -8,7 +8,6 @@ const MainMenu = () => {
   const navItems = [
     { to: "/", label: "Home" },
     { to: "/contact", label: "Contact" },
-    { to: "/allmosque", label: "All Mosque" },
   ];
     return (
         <>

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Link,NavLink } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Link, useNavigate } from "react-router-dom";
 
 import IONA from "../assets/Mosque-Img/IONAMASJID.webp";
 import BaitulMukarram from "../assets/Mosque-Img/Baitul-Mukarram.webp";
@@ -18,9 +18,7 @@ import AlIhsaan from "../assets/Mosque-Img/AL IHSAAN ISLAMIC CENTER.webp";
 import DarulUloomMichigan from "../assets/Mosque-Img/DARUL ULOOM MICHIGAN.webp";
 
 const Home = () => {
-  const navigate = useNavigate();
-  const [search, setSearch] = useState("");
-
+  const [isOpen, setIsOpen] = useState(false);
   let Info = [
     { Name: "IONA Masjid", MosqueImg: IONA, link: "/allmosque/IONAMASJID" },
     { Name: "Baitul Mukarram", MosqueImg: BaitulMukarram, link: "/allmosque" },
@@ -62,39 +60,54 @@ const Home = () => {
     },
   ];
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    const mosque = Info.find((m) =>
-      m.Name.toLowerCase().includes(search.toLowerCase().trim())
-    );
-    if (mosque) {
-      navigate(mosque.link);
-    } else {
-      alert("Mosque not found!");
-    }
-  };
-
   return (
     <div className="w-full min-h-screen bg-gray-50">
-      {/* 🔍 Search Bar */}
-      <div className="max-w-xl mx-auto py-6 px-4">
-        <form onSubmit={handleSearch} className="flex items-center gap-2">
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search Mosque..."
-            className="flex-1 px-4 py-2 rounded-xl border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-          />
-          <button
-            type="submit"
-            className="px-6 py-2 bg-green-600 text-white rounded-xl shadow-md hover:bg-green-700 transition"
+      <div className="flex">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="inline-flex md:text-xl text-2xl justify-center w-full rounded-e-none rounded-md border border-yellow-400 shadow-sm px-4 py-2 bg-black text-white font-medium hover:bg-gray-900 focus:outline-none"
+        >
+          🕌 Select Mosque
+          <svg
+            className={`ml-2 -mr-1 h-9 w-9 transition-transform duration-200 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
           >
-            Search
-          </button>
-        </form>
+            <path
+              fillRule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
       </div>
 
+            {/* Dropdown Menu */}
+      {isOpen && (
+        <div className="absolute mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black/5 z-50">
+          <div className="py-1">
+            {Info.map((item) => (
+              <NavLink
+                key={item.Name}
+                to={item.link}
+                className={({ isActive }) =>
+                  `block px-4 py-2 text-sm font-medium ${
+                    isActive
+                      ? "bg-green-100 text-green-700"
+                      : "text-gray-700 hover:bg-green-50 hover:text-green-800"
+                  }`
+                }
+                onClick={() => setIsOpen(false)} // Close on click
+              >
+                {item.Name}
+              </NavLink>
+            ))}
+          </div>
+        </div>
+      )}
       {/* Hero Slider */}
       <Swiper
         spaceBetween={30}
@@ -141,153 +154,7 @@ const Home = () => {
           Contact Us
         </Link>
       </section>
-      {/* 🕌 Report Incorrect Mosque Times Section */}
-      <section className="relative bg-gradient-to-r from-green-50 via-white to-green-50 py-16">
-        <div className="max-w-3xl mx-auto text-center px-6">
-          <h2 className="text-4xl font-bold text-green-700 mb-4">
-            🕌 Report Incorrect Mosque Times
-          </h2>
-          <p className="text-gray-600 mb-8 leading-relaxed">
-            If you notice that a mosque prayer or Iqama time is incorrect,
-            please help us by uploading the mosque name and a clear picture of
-            the time schedule. Your contribution helps keep prayer times
-            accurate for everyone.
-          </p>
 
-          {/* Upload Button Container */}
-          <div className="flex justify-center">
-            <button className="relative group px-5 py-4 bg-gradient-to-r from-green-600 to-green-500 text-white text-xl font-semibold rounded-2xl shadow-xl overflow-hidden transform transition duration-300 hover:scale-105">
-              {/* Button Text */}
-              <Link
-                to="/allmosque/addmosque"
-                className="relative z-10 flex items-center gap-2"
-              >
-                📤 Upload Schedule
-              </Link>
-
-              {/* Ripple Glow Effect */}
-              <span className="absolute inset-0 bg-green-400 opacity-0 group-hover:opacity-20 animate-ping"></span>
-              <span className="absolute inset-0 bg-green-700 opacity-0 group-hover:opacity-20 transition duration-500"></span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* 🌙 Features Section */}
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[
-          {
-            icon: "🕌",
-            title: "Daily Prayers",
-            desc: "Stay updated with accurate daily prayer timings.",
-          },
-          {
-            icon: "🤝",
-            title: "Community",
-            desc: "Join a strong and welcoming Muslim community.",
-          },
-          // {
-          //   icon: "📖",
-          //   title: "Quran Classes",
-          //   desc: "Weekly Quran learning sessions for all ages.",
-          // },
-          {
-            icon: "❤️",
-            title: "Donations",
-            desc: "Support mosque projects and future generations.",
-          },
-        ].map((item, i) => (
-          <div
-            key={i}
-            className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition"
-          >
-            <h2 className="text-2xl font-bold text-green-700 mb-3">
-              {item.icon} {item.title}
-            </h2>
-            <p className="text-gray-600">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* 📖 About Section */}
-      {/* <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <img
-          src={BaitulMukarram}
-          alt="Mosque"
-          className="rounded-2xl shadow-lg"
-        />
-        <div>
-          <h2 className="text-4xl font-bold text-green-700 mb-4">
-            About Our Mosque
-          </h2>
-          <p className="text-gray-600 leading-relaxed mb-6">
-            Our mosque serves as a spiritual and community hub for Muslims of
-            all ages. We provide daily prayers, Quran classes, lectures, youth
-            programs, and community events.
-          </p>
-          <Link
-            to="/about"
-            className="inline-block px-6 py-3 bg-green-600 text-white rounded-xl shadow-md hover:bg-green-700 transition"
-          >
-            Learn More
-          </Link>
-        </div>
-      </div> */}
-
-      {/* 📅 Events Section */}
-      {/* <div className="bg-green-50 py-16">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-green-700 mb-10">
-            Upcoming Events
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Jummah Khutbah",
-                date: "Every Friday",
-                desc: "Join us for weekly Jummah prayers & khutbah.",
-              },
-              {
-                title: "Quran Tafseer",
-                date: "Every Saturday",
-                desc: "Deep dive into Quran with our scholars.",
-              },
-              {
-                title: "Youth Gathering",
-                date: "Monthly",
-                desc: "Programs to empower and guide our youth.",
-              },
-            ].map((event, i) => (
-              <div
-                key={i}
-                className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition"
-              >
-                <h3 className="text-2xl font-semibold text-green-700">
-                  {event.title}
-                </h3>
-                <p className="text-sm text-gray-500 mb-2">{event.date}</p>
-                <p className="text-gray-600">{event.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
-
-      {/* ❤️ Donation Section */}
-      {/* <div className="bg-green-600 py-16 text-center text-white">
-        <h2 className="text-4xl font-bold mb-4">Support Your Mosque</h2>
-        <p className="mb-6 text-lg max-w-2xl mx-auto">
-          Your generous donations help maintain the mosque, support education,
-          and build future projects.
-        </p>
-        <Link
-          to="/donate"
-          className="px-8 py-3 bg-white text-green-700 font-semibold rounded-xl shadow-md hover:bg-gray-100 transition"
-        >
-          Donate Now
-        </Link>
-      </div> */}
-      {/* The rest of your content (Mission, Features, About, Events, Donation)... */}
     </div>
   );
 };

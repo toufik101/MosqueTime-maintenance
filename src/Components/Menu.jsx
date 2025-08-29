@@ -27,11 +27,11 @@ const Menu = () => {
       <div className="flex">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="inline-flex justify-center w-full rounded-e-none rounded-md border border-green-400 shadow-sm px-4 py-2 bg-green-600 text-white font-medium hover:bg-green-700 focus:outline-none"
+          className="inline-flex md:text-xl text-2xl justify-center w-full rounded-e-none rounded-md border border-green-400 shadow-sm px-4 py-2 bg-green-600 text-white font-medium hover:bg-green-700 focus:outline-none"
         >
           🕌 Select Mosque
           <svg
-            className={`ml-2 -mr-1 h-5 w-5 transition-transform duration-200 ${
+            className={`ml-2 -mr-1 h-9 w-9 transition-transform duration-200 ${
               isOpen ? "rotate-180" : ""
             }`}
             xmlns="http://www.w3.org/2000/svg"

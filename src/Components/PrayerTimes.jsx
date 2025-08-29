@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
   const [todayData, setTodayData] = useState(null);
@@ -35,7 +36,7 @@ const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
   if (!todayData) return <p>Loading today's prayer times...</p>;
   const { day, date } = todayData;
   const { fajr, dhuhr, asr, maghrib, isha } = todayData.iqamah;
-  const { MosqueName, Mosquelocation,iquamahBg } = locations;
+  const { MosqueName, Mosquelocation, iquamahBg } = locations;
   //// const { fajr, sunrise, dhuhr, asr, maghrib, isha} = todayData.iqamah;
 
   return (
@@ -57,7 +58,7 @@ const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
         </section> */}
 
         {/* SECTION-02 */}
-        <section className="my-4 md:w-2/3 mx-auto p-2 backdrop-blur-xs rounded-lg shadow-lg shadow-black">
+        <section className="my-4 md:w-2/3 mx-auto  p-2  backdrop-blur-xs rounded-lg shadow-lg shadow-black">
           <h2 className="text-xl text-center font-bold">IQAMAH TIME</h2>
           <div className="border border-gray-400 rounded shadow-md text-sm">
             <div className="bg-gray-700 text-white text-center text-xl py-2 font-bold">
@@ -87,8 +88,41 @@ const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
             </div>
           </div>
         </section>
+
+        {/* 🕌 Report Incorrect Mosque Times Section */}
+        <section className="relative bg-gradient-to-r from-green-50 via-white to-green-50 py-2">
+          <div className="max-w-3xl mx-auto text-center px-6">
+            <h2 className="text-4xl font-bold text-green-700 mb-4">
+              🕌 Report Incorrect Mosque Times
+            </h2>
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              If you notice that a mosque prayer or Iqama time is incorrect,
+              please help us by uploading the mosque name and a clear picture of
+              the time schedule. Your contribution helps keep prayer times
+              accurate for everyone.
+            </p>
+
+            {/* Upload Button Container */}
+            <div className="flex justify-center">
+              <button className="relative group px-5 py-4 bg-gradient-to-r from-green-600 to-green-500 text-white text-xl font-semibold rounded-2xl shadow-xl overflow-hidden transform transition duration-300 hover:scale-105">
+                {/* Button Text */}
+                <Link
+                  to="/allmosque/addmosque"
+                  className="relative z-10 flex items-center gap-2"
+                >
+                  📤 Upload Schedule
+                </Link>
+
+                {/* Ripple Glow Effect */}
+                <span className="absolute inset-0 bg-green-400 opacity-0 group-hover:opacity-20 animate-ping"></span>
+                <span className="absolute inset-0 bg-green-700 opacity-0 group-hover:opacity-20 transition duration-500"></span>
+              </button>
+            </div>
+          </div>
+        </section>
       </div>
-    </>);
+    </>
+  );
 };
 
 export default PrayerTimes;
