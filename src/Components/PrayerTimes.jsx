@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import  "../assets/Mosque-Img/IQUAMAH-BG.jpg"
 const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
   const [todayData, setTodayData] = useState(null);
   // const [todayDate, setTodayDate] = useState("");

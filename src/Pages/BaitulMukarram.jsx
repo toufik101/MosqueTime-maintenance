@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Leftbox from "../Components/Leftbox";
 import PrayerTimes from "../Components/PrayerTimes";
 import PrayerRow from "../Components/PrayerRow";
-import "../assets/Mosque-Img/IQUAMAH-BG.jpg"
 const BaitulMukarram = () => {
   const [data, setData] = useState([]);
   const [monthName, setMonthName] = useState("");
