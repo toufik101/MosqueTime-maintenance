@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import  "../assets/Mosque-Img/IQUAMAH-BG.jpg"
+import bgImage from "../assets/Mosque-Img/IQUAMAH-BG.jpg"
 const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
   const [todayData, setTodayData] = useState(null);
   // const [todayDate, setTodayDate] = useState("");
@@ -41,7 +41,7 @@ const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
   if (!todayData) return <p>Loading today's prayer times...</p>;
   const { day, date } = todayData;
   const { fajr, dhuhr, asr, maghrib, isha } = todayData.iqamah;
-  const { MosqueName, Mosquelocation, iquamahBg } = locations;
+  const { MosqueName, Mosquelocation, /*iquamahBg*/ } = locations;
   //// const { fajr, sunrise, dhuhr, asr, maghrib, isha} = todayData.iqamah;
 
   return (
@@ -49,7 +49,7 @@ const PrayerTimes = ({ currentMonth, mosqueName /*Data*/ }) => {
       <div
         className=" rounded-2xl bg-fixed bg-cover bg-no-repeat  bg-center  py-2"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('${iquamahBg}')`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('${bgImage}')`,
         }}
       >
         {/* <section className=" backdrop-blur-xs  text-center bg-gradient-to-r from-blue-0 to-indigo-0 text-yellow-400 rounded-2xl shadow-lg max-w-md mx-auto">
