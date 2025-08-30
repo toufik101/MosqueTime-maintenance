@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Leftbox from "../Components/Leftbox";
 import PrayerTimes from "../Components/PrayerTimes";
 import PrayerRow from "../Components/PrayerRow";
-import Menu from "../Components/Menu";
+import "../assets/Mosque-Img/IQUAMAH-BG.jpg"
 const BaitulMukarram = () => {
   const [data, setData] = useState([]);
   const [monthName, setMonthName] = useState("");
@@ -57,8 +57,6 @@ const BaitulMukarram = () => {
   const { MosqueName, Mosquelocation, mosqueImg } = mosqueImage;
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100">
-      {/*---------------------- Top Navigation-------------------------------*/}
-      
 
       {/* -----------------------background img----------------------------- */}
       <section
